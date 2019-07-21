@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Noble"
+  },
+  {
+    "name": "Cultist"
+  },
+  {
+    "name": "Giant Rat"
+  },
+  {
+    "name": "Gray Ooze"
+  },
+  {
+    "name": "Kraul Warrior"
+  },
+  {
+    "name": "Swarm of Insects"
+  },
+  {
+    "name": "Zombie"
+  },
+  {
+    "name": "Goblin"
+  },
+  {
+    "name": "Scorchbringer Guard"
+  },
+  {
+    "name": "Goblin Gang Member",
+    "size": "small",
+    "type": "humanoid",
+    "alignment": ["neutral", "evil"],
+    "armor": {
+      "class": 14,
+      "type": "leather armor"
+    },
+    "hit_points": {
+      "average": 10,
+      "roll": {
+        "dice": "3d6"
+      },
+      "max": 0,
+      "current": 0
+    },
+    "speed": 30,
+    "stats": {
+      "str": {
+        "value": 8,
+        "modifier": -1
+      },
+      "dex": {
+        "value": 16,
+        "modifier": 3
+      },
+      "con": {
+        "value": 10,
+        "modifier": 0
+      },
+      "int": {
+        "value": 10,
+        "modifier": 0
+      },
+      "wis": {
+        "value": 10,
+        "modifier": 0
+      },
+      "cha": {
+        "value": 8,
+        "modifier": -1
+      }
+    },
+    "skills": [
+      {
+        "name": "Stealth",
+        "value": 5
+      }
+    ],
+    "senses": [
+      {
+        "name": "Darkvision",
+        "value": 60
+      },
+      {
+        "name": "Passive Perception",
+        "value": 10
+      }
+    ],
+    "languages": ["Common", "Goblin"],
+    "challenge": {
+      "value": "1/4",
+      "xp": 50
+    },
+    "abilities": [
+      {
+        "name": "Nimble Escape",
+        "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Dagger",
+        "type": ["Melee Weapon Attack", "Ranged Weapon Attack"],
+        "modifier": 5,
+        "reach": "5",
+        "range": {
+          "short": 20,
+          "long": 60
+        },
+        "targets": 1,
+        "hit": {
+          "average": 5,
+          "roll": {
+            "dice": "1d4",
+            "modifier": 3
+          },
+          "type": "piercing"
+        }
+      },
+      {
+        "name": "Light Crossbow",
+        "type": ["Ranged Weapon Attack"],
+        "modifier": 5,
+        "range": {
+          "short": 80,
+          "long": 320
+        },
+        "targets": 1,
+        "hit": {
+          "average": 7,
+          "roll": {
+            "dice": "1d8",
+            "modifier": 3
+          },
+          "type": "piercing"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Goblin"
+  },
+  {
+    "name": "Solider"
+  }
+]
