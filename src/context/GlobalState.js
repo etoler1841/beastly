@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer } from 'react'
 
 import creatureSrc from '../static/creatures'
-
-import TableauContext from './tableau-context'
 import { creatureListReducer, ADD_CREATURE, REMOVE_CREATURE } from './reducers'
+
+const TableauContext = React.createContext()
 
 const GlobalState = props => {
   const [creatureList, dispatch] = useReducer(creatureListReducer, {
@@ -46,3 +46,4 @@ const GlobalState = props => {
 }
 
 export default GlobalState
+export { TableauContext }

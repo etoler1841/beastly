@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Row, Col } from 'reactstrap'
 import CreatureCard from '../CreatureCard'
 
-import TableauContext from '../../context/tableau-context'
+import { TableauContext } from '../../context/GlobalState'
 
 const Tableau = props => {
   return (
