@@ -1,47 +1,30 @@
-import React from 'react'
-import { Card, Row, Col, Button } from 'reactstrap'
+import React, { useContext } from 'react'
+import { Card, Row, Col } from 'reactstrap'
 import CreatureCard from '../CreatureCard'
+import CreatureSelector from '../CreatureSelector'
 
 import { TableauContext } from '../../context/GlobalState'
 
 const Tableau = props => {
-  const content = (
-    <TableauContext.Consumer>
-      {context => {
-        if (!context.creatures.length) return <div>No creatures...</div>
-        return (
-          <React.Fragment>
-            {context.creatures.map(creature => (
-              <Col key={creature.id} xs={4} md={3}>
-                <CreatureCard creature={creature} />
-              </Col>
-            ))}
-          </React.Fragment>
-        )
-      }}
-    </TableauContext.Consumer>
-  )
+  const context = useContext(TableauContext)
 
-  const addCreatureButton = (
-    <TableauContext.Consumer>
-      {context => (
-        <Col xs={4} md={3}>
-          <Button
-            color="success"
-            onClick={() => context.addCreature('Goblin Gang Member')}
-          >
-            Add gang member
-          </Button>
+  const content = (
+    <React.Fragment>
+      {context.creatures.map(creature => (
+        <Col key={creature.id} xs={4} md={3}>
+          <CreatureCard creature={creature} />
         </Col>
-      )}
-    </TableauContext.Consumer>
+      ))}
+    </React.Fragment>
   )
 
   return (
     <Card body>
       <Row className="d-flex align-items-stretch">
         {content}
-        {addCreatureButton}
+        <Col xs={4} md={3}>
+          <CreatureSelector />
+        </Col>
       </Row>
     </Card>
   )
