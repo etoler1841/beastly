@@ -4,6 +4,11 @@ import { Modal, ModalHeader, ModalBody, Button, Input } from 'reactstrap'
 import { TableauContext } from '../../context/GlobalState'
 
 import creatures from '../../static/creatures'
+creatures.sort((a, b) => {
+  if (a.name < b.name) return -1
+  if (a.name > b.name) return 1
+  return 0
+})
 
 const CreatureSelector = props => {
   const context = useContext(TableauContext)
@@ -15,6 +20,7 @@ const CreatureSelector = props => {
     if (!selectedCreature) return
     context.addCreature(selectedCreature)
     setIsOpen(false)
+    setSelectedCreature('')
   }
 
   const addCreatureButton = (
@@ -28,7 +34,11 @@ const CreatureSelector = props => {
   )
 
   const selector = (
-    <Input type="select" onChange={e => setSelectedCreature(e.target.value)}>
+    <Input
+      type="select"
+      value={selectedCreature}
+      onChange={e => setSelectedCreature(e.target.value)}
+    >
       <option value="">Choose...</option>
       {creatures.map(creature => (
         <option key={creature.name} value={creature.name}>
