@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card, Button } from 'reactstrap'
 
+import { TableauContext } from '../../context/GlobalState'
+
 const CreatureCard = ({ creature }) => {
   let hpBlock = '0 / 0'
   if (creature.hit_points)
@@ -10,14 +12,32 @@ const CreatureCard = ({ creature }) => {
       </div>
     )
   const hpButtons = (
-    <div className="creature-card-hp-buttons">
-      <Button color="success" className="p-2">
-        +
-      </Button>
-      <Button color="danger" className="p-2">
-        -
-      </Button>
-    </div>
+    <TableauContext.Consumer>
+      {context => (
+        <div className="creature-card-hp-buttons">
+          <Button
+            color="success"
+            onClick={() =>
+              context.setCreatureHP(creature.id, {
+                current: creature.hit_points.current + 1
+              })
+            }
+          >
+            +
+          </Button>
+          <Button
+            color="danger"
+            onClick={() =>
+              context.setCreatureHP(creature.id, {
+                current: creature.hit_points.current - 1
+              })
+            }
+          >
+            -
+          </Button>
+        </div>
+      )}
+    </TableauContext.Consumer>
   )
 
   return (

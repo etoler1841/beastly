@@ -1,7 +1,12 @@
 import React, { useEffect, useReducer } from 'react'
 
 import creatureSrc from '../static/creatures'
-import { creatureListReducer, ADD_CREATURE, REMOVE_CREATURE } from './reducers'
+import {
+  creatureListReducer,
+  ADD_CREATURE,
+  REMOVE_CREATURE,
+  SET_CREATURE_HP
+} from './reducers'
 
 const TableauContext = React.createContext()
 
@@ -27,6 +32,19 @@ const GlobalState = props => {
     })
   }
 
+  const setCreatureHP = (creatureId, params) => {
+    for (let param in params) {
+      dispatch({
+        type: SET_CREATURE_HP,
+        params: {
+          creatureId,
+          param,
+          value: params[param]
+        }
+      })
+    }
+  }
+
   useEffect(() => {
     const defaultCreatures = ['Goblin Gang Member']
     defaultCreatures.map(creature => addCreature(creature))
@@ -37,7 +55,8 @@ const GlobalState = props => {
       value={{
         creatures: creatureList.creatures,
         addCreature,
-        removeCreature
+        removeCreature,
+        setCreatureHP
       }}
     >
       {props.children}
