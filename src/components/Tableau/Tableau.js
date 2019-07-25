@@ -3,10 +3,10 @@ import { Card, Row, Col } from 'reactstrap'
 import CreatureCard from '../CreatureCard'
 import CreatureSelector from '../CreatureSelector'
 
-import { TableauContext } from '../../context/GlobalState'
+import { AppContext } from '../../context/GlobalState'
 
 const Tableau = props => {
-  const context = useContext(TableauContext)
+  const context = useContext(AppContext)
 
   const content = (
     <React.Fragment>

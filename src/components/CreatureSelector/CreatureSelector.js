@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Modal, ModalHeader, ModalBody, Button, Input } from 'reactstrap'
 
-import { TableauContext } from '../../context/GlobalState'
+import { AppContext } from '../../context/GlobalState'
 
 import creatures from '../../static/creatures'
 creatures.sort((a, b) => {
@@ -11,7 +11,7 @@ creatures.sort((a, b) => {
 })
 
 const CreatureSelector = props => {
-  const context = useContext(TableauContext)
+  const context = useContext(AppContext)
 
   const [isOpen, setIsOpen] = useState(false)
   const [selectedCreature, setSelectedCreature] = useState('')

@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { Card, Button } from 'reactstrap'
 import { HPGauge } from '.'
 
-import { TableauContext } from '../../context/GlobalState'
+import { AppContext } from '../../context/GlobalState'
 
 const CreatureCard = ({ creature }) => {
-  const context = useContext(TableauContext)
+  const context = useContext(AppContext)
 
   return (
     <Card
@@ -18,6 +18,14 @@ const CreatureCard = ({ creature }) => {
       </div>
       <HPGauge creature={creature} />
       <div>
+        <Button
+          color="info"
+          className="p-1"
+          onClick={() => context.showCreatureDetail(creature.id)}
+          block
+        >
+          View
+        </Button>
         <Button
           color="secondary"
           className="p-1"

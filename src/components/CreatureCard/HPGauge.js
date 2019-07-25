@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Row, Col, Button } from 'reactstrap'
 
-import { TableauContext } from '../../context/GlobalState'
+import { AppContext } from '../../context/GlobalState'
 
 const HPGauge = ({ creature }) => {
-  const context = useContext(TableauContext)
+  const context = useContext(AppContext)
 
   let hpBlock = '0 / 0'
   if (creature.hit_points)
