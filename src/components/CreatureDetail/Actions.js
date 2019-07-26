@@ -6,6 +6,15 @@ const Actions = () => {
   const context = useContext(AppContext)
   const { creature } = context.detail
 
+  const createHitText = hit =>
+    `${hit.average} (${hit.roll.dice}${
+      hit.roll.hasOwnProperty('modifier')
+        ? hit.roll.modifier >= 0
+          ? ` + ${hit.roll.modifier}`
+          : ` ${hit.roll.modifier}`
+        : ''
+    }) ${hit.type}`
+
   const createActionBlock = action => (
     <div key={`${action.name}-${action.type}`} className="mb-2">
       <em>{action.type}:</em> {action.modifier >= 0 ? `+` : null}
@@ -14,14 +23,11 @@ const Actions = () => {
       {action.range
         ? `range ${action.range.short}/${action.range.long} ft., `
         : null}
-      {action.targets} target(s). Hit: {action.hit.average} (
-      {action.hit.roll.dice}
-      {action.hit.roll.hasOwnProperty('modifier')
-        ? action.hit.modifier >= 0
-          ? `+${action.hit.modifier}`
-          : action.hit.modifier
-        : null}
-      ) {action.hit.type}
+      {action.targets} target(s). Hit:{' '}
+      {action.hit instanceof Array
+        ? action.hit.map(hit => createHitText(hit)).join(', ')
+        : createHitText(action.hit)}
+      . {action.effect || null}
     </div>
   )
 

@@ -1,30 +1,314 @@
 [
   {
-    "name": "Noble"
+    "name": "Noble",
+    "size": "medium",
+    "type": "humanoid",
+    "alignment": ["any alignment"],
+    "armor": {
+      "class": 15,
+      "type": "breastplate"
+    },
+    "hit_points": {
+      "average": 9,
+      "roll": {
+        "dice": [8, 8]
+      },
+      "max": 0,
+      "current": 0
+    },
+    "speed": 30,
+    "stats": {
+      "str": 11,
+      "dex": 12,
+      "con": 11,
+      "int": 12,
+      "wis": 14,
+      "cha": 16
+    },
+    "skills": [
+      {
+        "name": "Deception",
+        "value": 5
+      },
+      {
+        "name": "Insight",
+        "value": 4
+      },
+      {
+        "name": "Persuasion",
+        "value": 5
+      }
+    ],
+    "senses": [
+      {
+        "name": "Passive Perception",
+        "value": 12
+      }
+    ],
+    "languages": ["any two languages"],
+    "challenge": {
+      "value": "1/8",
+      "xp": 25
+    },
+    "abilities": [],
+    "actions": [
+      {
+        "name": "Rapier",
+        "type": "Melee Weapon Attack",
+        "modifier": 3,
+        "reach": 5,
+        "targets": 1,
+        "hit": {
+          "average": 5,
+          "roll": {
+            "dice": "1d8",
+            "modifier": 1
+          },
+          "type": "piercing"
+        }
+      }
+    ]
   },
   {
-    "name": "Cultist"
+    "name": "Cultist",
+    "size": "medium",
+    "type": "humanoid",
+    "alignment": ["any non-good alignment"],
+    "armor": {
+      "class": 12,
+      "type": "leather armor"
+    },
+    "hit_points": {
+      "average": 9,
+      "roll": {
+        "dice": [8, 8]
+      },
+      "max": 0,
+      "current": 0
+    },
+    "speed": 30,
+    "stats": {
+      "str": 11,
+      "dex": 12,
+      "con": 10,
+      "int": 10,
+      "wis": 11,
+      "cha": 10
+    },
+    "skills": [
+      {
+        "name": "Deception",
+        "value": 2
+      },
+      {
+        "name": "Religion",
+        "value": 2
+      }
+    ],
+    "senses": [
+      {
+        "name": "Passive Perception",
+        "value": 10
+      }
+    ],
+    "languages": ["any one language"],
+    "challenge": {
+      "value": "1/8",
+      "xp": 25
+    },
+    "abilities": [
+      {
+        "name": "Dark Devotion",
+        "description": "The cultist has advantage on saving throws against being charmed or frightened."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Scimitar",
+        "type": "Melee Weapon Attack",
+        "modifier": 3,
+        "reach": 5,
+        "targets": 1,
+        "hit": {
+          "average": 4,
+          "roll": {
+            "dice": "1d6",
+            "modifier": 1
+          },
+          "type": "slashing"
+        }
+      }
+    ]
   },
   {
-    "name": "Giant Rat"
+    "name": "Giant Rat",
+    "size": "small",
+    "type": "beast",
+    "alignment": ["unaligned"],
+    "armor": {
+      "class": 12
+    },
+    "hit_points": {
+      "average": 7,
+      "roll": {
+        "dice": [6, 6]
+      },
+      "max": 0,
+      "current": 0
+    },
+    "speed": 30,
+    "stats": {
+      "str": 7,
+      "dex": 15,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 4
+    },
+    "skills": [],
+    "senses": [
+      {
+        "name": "Darkvision",
+        "value": 60
+      },
+      {
+        "name": "Passive Perception",
+        "value": 10
+      }
+    ],
+    "languages": [],
+    "challenge": {
+      "value": "1/8",
+      "xp": 25
+    },
+    "abilities": [
+      {
+        "name": "Keen Smell",
+        "description": "The rat has advantage on Wisdom (Perception) checks that rely on smell."
+      },
+      {
+        "name": "Pack Tactics",
+        "description": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't incapacitated"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "type": "Melee Weapon Attack",
+        "modifier": 4,
+        "reach": 5,
+        "targets": 1,
+        "hit": {
+          "average": 4,
+          "roll": {
+            "dice": "1d4",
+            "modifier": 2
+          },
+          "type": "piercing"
+        }
+      }
+    ]
   },
   {
-    "name": "Gray Ooze"
-  },
-  {
-    "name": "Kraul Warrior"
-  },
-  {
-    "name": "Swarm of Insects"
-  },
-  {
-    "name": "Zombie"
-  },
-  {
-    "name": "Goblin"
-  },
-  {
-    "name": "Scorchbringer Guard"
+    "name": "Gray Ooze",
+    "size": "medium",
+    "type": "ooze",
+    "alignment": ["unaligned"],
+    "armor": {
+      "class": 8
+    },
+    "hit_points": {
+      "average": 22,
+      "roll": {
+        "dice": [8, 8, 8],
+        "modifier": 9
+      },
+      "max": 0,
+      "current": 0
+    },
+    "speed": {
+      "default": 10,
+      "climb": 10
+    },
+    "stats": {
+      "str": 12,
+      "dex": 6,
+      "con": 16,
+      "int": 1,
+      "wis": 6,
+      "cha": 2
+    },
+    "skills": [
+      {
+        "name": "Stealth",
+        "value": 2
+      }
+    ],
+    "damage_resistances": ["acid", "cold", "fire"],
+    "condition_immunities": [
+      "blinded",
+      "charmed",
+      "deafened",
+      "exhaustion",
+      "frightened",
+      "prone"
+    ],
+    "senses": [
+      {
+        "name": "Blindsight",
+        "value": 60
+      },
+      {
+        "name": "Passive Perception",
+        "value": 8
+      }
+    ],
+    "languages": [""],
+    "challenge": {
+      "value": "1/2",
+      "xp": 50
+    },
+    "abilities": [
+      {
+        "name": "Amorphous",
+        "description": "The ooze can move through a space as narrow as 1 inch wide without squeezing."
+      },
+      {
+        "name": "Corrode Metal",
+        "description": "Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.\r\nThe ooze can eat through 2-inch-thick, nonmagical metal in 1 round."
+      },
+      {
+        "name": "False Appearance",
+        "description": "While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Psuedopod",
+        "type": "Melee Weapon Attack",
+        "modifier": 3,
+        "reach": 5,
+        "targets": 1,
+        "hit": [
+          {
+            "average": 4,
+            "roll": {
+              "dice": "1d6",
+              "modifier": 1
+            },
+            "type": "bludgeoning"
+          },
+          {
+            "average": 7,
+            "roll": {
+              "dice": "2d6"
+            },
+            "type": "acid"
+          }
+        ],
+        "effect": "If the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+      }
+    ]
   },
   {
     "name": "Goblin Gang Member",
@@ -86,7 +370,7 @@
           {
             "type": "Melee Weapon Attack",
             "modifier": 5,
-            "reach": "5",
+            "reach": 5,
             "targets": 1,
             "hit": {
               "average": 5,
@@ -135,8 +419,5 @@
         }
       }
     ]
-  },
-  {
-    "name": "Solider"
   }
 ]

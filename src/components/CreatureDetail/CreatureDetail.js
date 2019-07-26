@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap'
-import { Vitals, Stats, Abilities, Actions } from '.'
+import { Vitals, Stats, Details, Abilities, Actions } from '.'
 
 import { AppContext } from '../../context/GlobalState'
 
@@ -16,6 +16,7 @@ const CreatureDetail = () => {
       <ModalBody>
         <Vitals />
         <Stats />
+        <Details />
         <Abilities />
         <Actions />
       </ModalBody>
