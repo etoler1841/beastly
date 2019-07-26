@@ -38,7 +38,7 @@
     "hit_points": {
       "average": 10,
       "roll": {
-        "dice": "3d6"
+        "dice": [6, 6, 6]
       },
       "max": 0,
       "current": 0

@@ -2,10 +2,28 @@ export const ADD_CREATURE = 'ADD_CREATURE'
 export const REMOVE_CREATURE = 'REMOVE_CREATURE'
 export const SET_CREATURE_HP = 'SET_CREATURE_HP'
 
+const roll = (dice, modifier = 0) => {
+  const val = dice.reduce((total, die) => {
+    const rand = Math.ceil(Math.random() * die)
+    return total + rand
+  }, 0)
+  const result = val + modifier
+  return result
+}
+
 const addCreature = (creature, state) => {
   const updatedList = [...state.creatures]
 
-  updatedList.push({ ...JSON.parse(JSON.stringify(creature)), id: Date.now() })
+  const hp = roll(
+    creature.hit_points.roll.dice,
+    creature.hit_points.roll.modifier
+  )
+
+  updatedList.push({
+    ...JSON.parse(JSON.stringify(creature)),
+    id: Date.now(),
+    hit_points: { ...creature.hit_points, current: hp, max: hp }
+  })
 
   return { ...state, creatures: updatedList }
 }
